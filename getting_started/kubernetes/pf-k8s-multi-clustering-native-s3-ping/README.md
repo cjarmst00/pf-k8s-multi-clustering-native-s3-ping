@@ -4,7 +4,7 @@
 
 ## What you will do
 You will deploy a multi-region adaptive Pingfederate cluster across multiple AWS EKS regional clusters.  
-The `kustomization.yaml` in the 'engines' and 'admin-console' directories build on top of `/01-standalone` to have pingfederate in cluster. 
+The `kustomization.yaml` in the 'engines' and 'admin-console' directories build on top of the standard DevOps PingFederate deployments. 
 From each of these directories, running `kustomize build .`
 will generate kubernetes yaml files that include: 
 
@@ -13,7 +13,7 @@ will generate kubernetes yaml files that include:
   - `pingfederate` represents the engine(s)
 2. Two Configmaps. One for each deployment. 
   - These configmaps are nearly identical, but define the operational mode separately.
-3. The configmaps include a [profile layer](https://github.com/cjarmst00/pingidentity-server-profiles/tree/master/pf-k8s-multi-clustering-native-s3-ping) that turns on PingFederate Clustering. This layer simply includes: 
+3. The configmaps include a [profile layer](https://github.com/cjarmst00/pf-k8s-multi-region-clustering/tree/master/server_profiles/pf-k8s-multi-clustering-native-s3-ping) that turns on PingFederate Clustering. This layer simply includes: 
   - tcp.xml.subst
   - run.properties.subst
   - cluster-adaptive.conf.subst
@@ -34,7 +34,7 @@ Some features are added to the PingFederate Engine Deployment to support zero-do
       - Non-public
       - Well scoped security policy, giving permissions to the service accounts running the EKS pingfederate clusters
       - Encrypted
-   - See the "AWS configuration" doc for example instructions
+   - See the "AWS configuration" instructions [Here] (https://github.com/pingidentity/pingidentity-devops-getting-started/blob/GDO-209_PF_multiregion/docs/deployPFMultiRegionAWS.md)
    - Successfully verified that a pod in one cluster can connect to a pod in the second cluster on ports 7600 and 7700
      (directly to the pods back-end IP, not an exposed service)
    
