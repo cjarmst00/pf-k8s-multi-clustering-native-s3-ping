@@ -34,7 +34,7 @@ Some features are added to the PingFederate Engine Deployment to support zero-do
       - Non-public
       - Well scoped security policy, giving permissions to the service accounts running the EKS pingfederate clusters
       - Encrypted
-   - See the "AWS configuration" instructions [Here] (https://github.com/pingidentity/pingidentity-devops-getting-started/blob/GDO-209_PF_multiregion/docs/deployPFMultiRegionAWS.md)
+   - See the "AWS configuration" instructions [Here](https://github.com/pingidentity/pingidentity-devops-getting-started/blob/GDO-209_PF_multiregion/docs/deployPFMultiRegionAWS.md)
    - Successfully verified that a pod in one cluster can connect to a pod in the second cluster on ports 7600 and 7700
      (directly to the pods back-end IP, not an exposed service)
    
