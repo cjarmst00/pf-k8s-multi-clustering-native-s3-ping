@@ -40,6 +40,7 @@ Some features are added to the PingFederate Engine Deployment to support zero-do
    
 
 ## Running
+Clone this repository to get the kubernetes yaml and configuration files for the exercise, then:
 
 1. Bring up the admin console in the first kubernetes cluster: 
    ```
@@ -85,7 +86,7 @@ Some features are added to the PingFederate Engine Deployment to support zero-do
      (PF_NODE_GROUP_ID)
    ```
    kustomize build . | kubectl apply -f -
-   kubectl scale deployment pingfederate-engine --replicas=2
+   kubectl scale deployment pingfederate --replicas=2
    ```
    - Again, validate that any new engines have successfully joined the cluster and written their IP to the S3 bucket
 
@@ -99,8 +100,9 @@ cd engines; kustomize build . | kubectl delete -f -
 ## Cleanup the first cluster containing engines and admin console: 
 
 ```
+kubectx <first cluster>
 kubectl scale deployment/pingfederate --replicas=0
 kubectl scale deployment/pingfederate-admin --replicas=0
-cd engines; kustomize build . | kubectl delete -f -
+kustomize build . | kubectl delete -f -
 cd ../admin-console; kustomize build . | kubectl delete -f -
 ```
