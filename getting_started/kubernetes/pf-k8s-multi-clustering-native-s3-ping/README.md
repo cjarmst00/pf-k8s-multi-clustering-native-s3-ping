@@ -1,4 +1,4 @@
-# 09-k8s-multi-clustering-native-s3-ping
+# k8s-multi-clustering-native-s3-ping
 
 ## THIS IS AN ADVANCED USE-CASE.  Note the extensive set of pre-requisites required for AWS kubernetes multi-clustering to be successful.
 
