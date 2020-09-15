@@ -75,7 +75,7 @@ Clone this repository to get the kubernetes yaml and configuration files for the
 
 4. Scale up more engines in the first kubernetes cluster: 
    ```
-   kubectl scale deployment pingfederate-engine --replicas=2
+   kubectl scale deployment pingfederate --replicas=2
    ```
    Again, validate that any new engines have successfully joined the cluster and written their IP to the S3 bucket
 
